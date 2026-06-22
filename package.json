@@ -9,11 +9,14 @@
   "scripts": {
     "build": "eve build",
     "dev": "eve dev",
+    "eval": "eve eval --max-concurrency 2",
+    "eval:ci": "eve eval --strict --max-concurrency 2 --junit .eve/junit.xml",
     "start": "eve start",
-    "typecheck": "tsgo"
+    "typecheck": "tsgo",
+    "smoke:fit-check": "tsgo -p tsconfig.fit-check-smoke.json && node .tmp/fit-check-smoke/evals/fit-check-smoke.js",
+    "smoke:structured-output": "tsgo -p tsconfig.structured-smoke.json && node .tmp/structured-output-smoke/evals/structured-output-smoke.js"
   },
   "dependencies": {
-    "@vercel/connect": "0.2.2",
     "ai": "7.0.0-beta.178",
     "eve": "^0.11.4",
     "zod": "4.4.3"
