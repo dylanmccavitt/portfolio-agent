@@ -12,7 +12,8 @@
     "eval": "eve eval --max-concurrency 2",
     "eval:ci": "eve eval --strict --max-concurrency 2 --junit .eve/junit.xml",
     "start": "eve start",
-    "typecheck": "tsgo"
+    "typecheck": "tsgo",
+    "smoke:structured-output": "tsgo -p tsconfig.structured-smoke.json && node .tmp/structured-output-smoke/evals/structured-output-smoke.js"
   },
   "dependencies": {
     "ai": "7.0.0-beta.178",
